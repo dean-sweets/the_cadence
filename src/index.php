@@ -1,12 +1,20 @@
-<?php
-  echo "Hello, world!";
-?>
 <!DOCTYPE html>
 <html>
   <head>
     <title>The Cadence</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
-  <body style="background-color: black;">
-    <img src="./assets/images/logo.png">
+  <body>
+    <div class="mainWrapper">
+      <div class="navbar">
+
+      </div>
+      <div class="content">
+
+      </div>
+      <div class="footer">
+
+      </div>
+    </div>
   </body>
 </html>
