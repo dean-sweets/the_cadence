@@ -3,5 +3,6 @@ command to run:
 sass --watch /Users/jakedemian/Documents/Procts/web_projects/the_cadence/src/css/sass:../css
 */
 @import url("normalize.css");
+@import url("navbar.css");
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,21 @@
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: #333; }
+  .navbar .logo-link .logo {
+    height: 50px;
+    width: 150px;
+    margin-left: 5px;
+    margin-top: 5px; }
+  .navbar .menubutton-container {
+    display: inline-block;
+    float: right; }
+    .navbar .menubutton-container .menubutton {
+      display: inline-block;
+      color: #eee;
+      text-decoration: none;
+      width: 100px;
+      height: 60px;
+      padding-top: 20px; }
+
+/*# sourceMappingURL=navbar.css.map */
