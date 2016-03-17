@@ -5,7 +5,8 @@
   //TODO kick this 'check if logged in' stuff out to a function
   if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true)
   {
-    echo 'why?';
+    header("Location: admin.php");
+    exit;
   }
 ?>
 
