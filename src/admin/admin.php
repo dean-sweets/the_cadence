@@ -1,10 +1,10 @@
 <?php
   session_start();
 
+  //TODO kick this 'check if logged in' stuff out to a function
   if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true)
   {
     $loggedin = true;
-    echo "you're logged in!!!";
   }
   else {
     $loggedin = false;
@@ -20,6 +20,7 @@
     <div class="mainWrapper">
       <?php if(!$loggedin) { ?>
 
+        <!-- Login page -->
         <div class="login">
           <h1>Login to Web App</h1>
           <form method="post" action="verifyadminlogin.php">
@@ -29,6 +30,9 @@
           </form>
         </div>
 
+      <?php } else {?>
+          <!-- Admin Console -->
+          <?php require('adminconsole.php'); ?>
       <?php } ?>
     </div>
   </body>
