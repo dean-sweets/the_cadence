@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  include_once('../includes/commonincludes.php');
 
   $username = $_POST["login"];
   $password = $_POST["password"];
