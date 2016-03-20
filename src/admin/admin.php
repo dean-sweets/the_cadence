@@ -1,14 +1,6 @@
 <?php
   require('../includes/commonincludes.php');
-
-  //TODO kick this 'check if logged in' stuff out to a function
-  if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true)
-  {
-    $loggedin = true;
-  }
-  else {
-    $loggedin = false;
-  }
+  $loggedin = isLoggedIn();
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,5 +27,6 @@
           <?php require('adminconsole.php'); ?>
       <?php } ?>
     </div>
+    <h5 style="color: #e33;"><?php plMsgPrint(); ?></h5>
   </body>
 </html>
