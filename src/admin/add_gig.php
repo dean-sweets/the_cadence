@@ -1,12 +1,8 @@
 <?php
   require('../includes/commonincludes.php');
+
   //if you aren't logged in, you can't view this page
-  //TODO kick this 'check if logged in' stuff out to a function
-  if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-  {
-    header("Location: admin.php");
-    exit;
-  }
+  redirectIfNotLoggedIn("admin.php");
 ?>
 
 <h1>Add a Gig</h1>
@@ -20,4 +16,4 @@
   <p class="submit"><input type="submit" name="addgig" value="Add"></p>
 </form>
 
-<h5><?php plMsgPrint(); ?></h5>
+<h5 style="color: #e33;"><?php plMsgPrint(); ?></h5>
