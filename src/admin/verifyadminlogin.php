@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  include_once('../includes/commonincludes.php');
 
   $username = $_POST["login"];
   $password = $_POST["password"];
@@ -28,15 +28,15 @@
 
   if($username == $dbusername && password_verify($password, $dbhash))
   {
-    //match!  add login flag to session then reroute back to adminlogin.php
+    //match!  add login flag to session then reroute back to admin.php
     $_SESSION["loggedin"] = true;
-    header("Location: adminlogin.php");
+    header("Location: admin.php");
     exit;
   }
   else
   {
-    //username or password did not match.  reroute back to adminlogin.php
-    header("Location: adminlogin.php");
+    //username or password did not match.  reroute back to admin.php
+    header("Location: admin.php");
     exit;
   }
 ?>
