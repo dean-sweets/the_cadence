@@ -1,3 +1,4 @@
+<?php require("includes/commonincludes.php") ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +27,7 @@
         </div>
       </div>
       <div class="content">
-
+        <h1>Homepage</h1>
       </div>
       <div class="footer">
 

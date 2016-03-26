@@ -11,20 +11,20 @@
 
   include_once('../includes/commonincludes.php');
 
-  if(isset($_POST["addOrRemove"]))
+  if(isset($_GET["addOrRemove"]))
   {
-    $addOrRemove = $_POST["addOrRemove"];
+    $addOrRemove = $_GET["addOrRemove"];
 
     ////////////////////////////////////////////
     //  ADD
     if($addOrRemove == 'add')
     {
       //grab the post parameters
-      $gigname = fetchPostParam("gigname");
-      $date = fetchPostParam("date");
-      $time = fetchPostParam("time");
-      $address = fetchPostParam("address");
-      $phone = fetchPostParam("phone");
+      $gigname = fetchGetParam("gigname");
+      $date = fetchGetParam("date");
+      $time = fetchGetParam("time");
+      $address = fetchGetParam("address");
+      $phone = fetchGetParam("phone");
 
       //validate the parameters
       //TODO expand on this, just doing date for now
@@ -43,15 +43,25 @@
         pageRedirect("admin.php", $GIG_ADD_SUCCESS);
       }
       else {
-        echo "Error: " . $query . "<br>" . $mysqli->error;
+        echo "Error: " . $query . "<br>" . $mysqli->error;//TODO FIXME this should also redirect to admin.php, but with an error message
       }
       $mysqli->close();
     }
 
     //////////////////////////////////////////
     //  REMOVE
-    else {
-      echo 'remove';
+    else
+    {
+      $mysqli = getMysqlConnection();
+      if (mysqli_connect_errno()) {printf("Connect failed: %s\n", mysqli_connect_error());exit();}
+      $query = "delete from gigs where gig_id = " . fetchGetParam("gig_id") . ";";
+      if ($mysqli->query($query)) {
+        pageRedirect("admin.php", $GIG_REMOVE_SUCESS);
+      }
+      else {
+        echo "Error: " . $query . "<br>" . $mysqli->error; //TODO FIXME this should also redirect to admin.php, but with an error message
+      }
+      $mysqli->close();
     }
   }
 
