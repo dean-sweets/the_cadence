@@ -1,37 +1,14 @@
 <?php require("includes/commonincludes.php") ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>The Cadence</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
+  <?php require("includes/html_partials/html_head.php"); ?>
   <body>
     <div class="mainWrapper">
-      <div class="navbar">
-        <a href="#" class="logo-link">
-          <img src="assets/images/logo.png" class="logo">
-        </a>
-        <div class="menubutton-container">
-          <a href="#" class="menubutton">
-            Home
-          </a>
-          <a href="#" class="menubutton">
-            Media
-          </a>
-          <a href="#" class="menubutton">
-            Gigs
-          </a>
-          <a href="#" class="menubutton">
-            Contact
-          </a>
-        </div>
-      </div>
+      <?php require("includes/html_partials/navbar.php") ?>
       <div class="content">
         <h1>Homepage</h1>
       </div>
-      <div class="footer">
-
-      </div>
+      <?php require("includes/html_partials/footer.php") ?>
     </div>
   </body>
 </html>
