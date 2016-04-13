@@ -6,7 +6,7 @@
 ?>
 
 <h1>Add a Gig</h1>
-<form method="post" action="updategigs.php">
+<form method="get" action="updategigs.php">
   <p><input type="text" name="gigname" value="" placeholder="Venue / Name" required></p>
   <p><input type="text" name="date" value="" placeholder="Date" required></p>
   <p><input type="text" name="time" value="" placeholder="Time" required></p>
